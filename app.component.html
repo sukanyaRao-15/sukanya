@@ -1,0 +1,68 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-card-4">
+  <header class="w3-container w3-blue" *ngFor="let image of data">
+    <h1>{{ image.original_title}}</h1>
+  </header>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>adult:</b></span>{{ image.adult}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>backdrop_path:</b></span>{{ image.backdrop_path}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>belongs_to_collection:</b></span>{{ image.belongs_to_collection}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>budget:</b></span>{{ image.budget}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>homepage:</b></span>{{ image.homepage}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>id:</b></span>{{ image.id}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>imdb_id:</b></span>{{ image.imdb_id}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>original_language:</b></span>{{ image.original_language}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>overview:</b></span>{{ image.overview}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>popularity:</b></span>{{ image.popularity}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>poster_path:</b></span>{{ image.poster_path}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>release_date:</b></span>{{ image.release_date}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>revenue:</b></span>{{ image.revenue}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>runtime:</b></span>{{ image.runtime}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>status:</b></span>{{ image.status}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>tagline:</b></span>{{ image.tagline}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>title:</b></span>{{ image.title}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>video:</b></span>{{ image.video}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>vote_average:</b></span>{{ image.vote_average}}</p>
+  </div>
+  <div class="w3-container" *ngFor="let image of data">
+    <p><span><b>vote_count:</b></span>{{ image.vote_count}}</p>
+  </div>
+</div>
