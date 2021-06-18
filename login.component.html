@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="assets/images/img.png" height="80%" width="80%">
+        </div>
+        <div class="col-sm-5">
+            <h2>Member LogIn</h2>
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" pattern="[a-z 0-9]+@[a-z]+\.(com|co.in)"
+                        [(ngModel)]='model.email' [ngClass]="{'is-invalid':f.submitted && email.invalid}"
+                        placeholder="email" #email="ngModel" required email minlength="5" />
+                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                        <div [hidden]="email.errors.pattern" style="color: red;">Please Enter email Id</div>
+                        <div [hidden]="email.errors.required " style="color: red;">Please Enter correct Email Address
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" [(ngModel)]='model.password'
+                        [ngClass]="{'is-invalid':f.submitted && password.invalid}" placeholder="Password"
+                        #password="ngModel" required minlength="5" />
+                    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                        <div *ngIf="password.errors.required" style="color: red;">Please Enter a Password</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">LogIn</button>
+                </div>
+
+                <div>
+                    Forgot <a routerLink="/">UserName/Password?</a>
+                </div><br><br>
+                <div> <a routerLink="/">Create new account</a></div><br><br>
+            </form>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

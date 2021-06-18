@@ -1,0 +1,118 @@
+<div class="container-fluid dashboard">
+    <div class="row over-flow">
+        <div class="col-sm-10">
+            <div class="row">
+                <h3>E-Cart Application</h3>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#eWayFormModal">Add New Order</button>
+            </div>
+            <table class="table table-hover">
+                <tr>
+                    <th>Order No.</th>
+                    <th>Due Date</th>
+                    <th>Buyer Name</th>
+                    <th>Address</th>
+                    <th>Phone No.</th>
+                    <th>Total</th>
+                    <th>
+                    </th>
+                </tr>
+                <tr *ngFor="let product of products;let i=index">
+                    <td>{{product.id}}</td>
+                    <td>{{product.date}}</td>
+                    <!-- <td><img src="{{product.image}}"> </td> -->
+                    <td>{{product.name}}</td>
+                    <td>{{product.address}}</td>
+                    <td>{{product.phone}}</td>
+                    <td>{{product.total}}</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#orderFormModal" class="btn btn-primary"
+                            (click)="openEdit(product)"><span></span>Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" (click)="deleteItem(i)" class="btn btn-danger"><span
+                                class="glyphicon glyphicon-trash"></span>Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="eWayFormModal" tabindex="-1" role="dialog" aria-labelledby="dialogFormModalCenterTitle"
+        aria-hidden="true">
+        <form [formGroup]="eWayForm">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eWayFormModalLongTitle">Add New Order</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label>OrderNo.</label>
+                        <input type="text" placeholder="Enter remarks here..." class="form-control"
+                            formControlName="id">
+                        <label>Date</label>
+                        <input type="text" placeholder="Enter Date here..." class="form-control" formControlName="date">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter name here..." class="form-control" formControlName="name">
+
+                        <label>Address</label>
+                        <input type="text" placeholder="Enter Adress here..." class="form-control"
+                            formControlName="address">
+                        <label>Phone No.</label>
+                        <input type="text" placeholder="Enter Phone number here..." class="form-control"
+                            formControlName="phone">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-secondary rounded"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm btn-primary rounded" data-dismiss="modal"
+                            (click)="onSubmitNew()">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ------------------- -->
+    <div class="modal fade" id="orderFormModal" tabindex="-1" role="dialog" aria-labelledby="dialogFormModalCenterTitle"
+        aria-hidden="true">
+        <form [formGroup]="orderForm">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderFormModalLongTitle">Edit Order</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label>id.</label>
+                            <input type="text" class="form-control" formControlName="id">
+                            <label>Date</label>
+                            <input type="text" class="form-control" formControlName="date">
+                            <label>Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+
+                            <label>Address</label>
+                            <input type="text" class="form-control" formControlName="address">
+                            <label>Phone No.</label>
+                            <input type="text" class="form-control" formControlName="phone">
+                            <label>Total</label>
+                            <input type="text" class="form-control" formControlName="total">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary rounded"
+                                data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-sm btn-primary rounded" data-dismiss="modal"
+                                (click)="onSubmitEdit()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

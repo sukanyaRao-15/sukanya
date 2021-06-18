@@ -1,0 +1,14 @@
+img {
+    width: 40px;
+    height: 40px;
+}
+.over-flow {
+    background-color: rgb(243, 227, 227);
+    height: 100%;
+    border: 1px black;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    margin-left: 10px;
+    padding-left: 60px;
+}
